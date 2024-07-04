@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  php83-xdebug:
+    build: .
+    image: tning6666/php83-xdebug
+    container_name: php83-xdebug
+    ports:
+      - "50080:80"
+    volumes:
+      - ./html:/var/www/html
+    environment:
+      XDEBUG_CONFIG: "remote_handler=dbgp client_host=host.docker.internal"
+      XDEBUG_SESSION: "PHPSTORM"

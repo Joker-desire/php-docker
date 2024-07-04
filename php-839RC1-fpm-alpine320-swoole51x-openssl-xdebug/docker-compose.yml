@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  php83-swoole51x-openssl-xdebug:
+    build: .
+    container_name: php83-swoole51x-openssl-xdebug
+    image: tning6666/php83-swoole51x-openssl-xdebug
+    tty: true
+    volumes:
+      - .:/opt/www
+    ports:
+      - 9501:9501
+    environment:
+      TZ: Asia/Shanghai
+      XDEBUG_CONFIG: log=/tmp/xdebug.log client_port=61177
+      PHP_IDE_CONFIG: serverName=docker
+
+networks:
+  default:
+    name: php83

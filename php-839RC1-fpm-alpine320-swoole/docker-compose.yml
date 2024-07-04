@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  php83-swoole:
+    build: .
+    container_name: php83-swoole
+    image: tning6666/php83-swoole
+    tty: true
+    volumes:
+      - ./:/opt/www
+    ports:
+      - 9501:9501
+    environment:
+      TZ: Asia/Shanghai
+
+networks:
+  default:
+    name: php83
